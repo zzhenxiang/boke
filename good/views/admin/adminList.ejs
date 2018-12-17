@@ -1,0 +1,38 @@
+<% include header %>
+<ol class="breadcrumb">
+	<li class="text-info">admin管理</li>
+	<li class="active">admin列表</li>
+</ol>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-hover datalist">
+			<caption>admin列表</caption>
+			<thead>
+				<tr>
+					
+					<td>admin名称</td>
+					<td>admin密码</td>
+					<td>创建时间</td>
+					<td>操作</td>
+				</tr>				
+			</thead>
+				
+			<% admins.forEach(function(val){ %>
+				<tr>
+					
+					<td><%=val.name%></td>
+					<td><%=val.password%></td>
+					<td><%= val.ctime.toLocaleString()%> </td>
+					<td>
+						<a href="/admin/adminEdit/<%=val._id%>">编辑</a>
+						|
+						<a href="/admin/adminRemove/<%=val._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+					</td>
+				</tr>
+			<% }) %>	
+
+		</table>
+	</div>
+</div>
+<% include footer %>

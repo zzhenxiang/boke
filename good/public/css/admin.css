@@ -1,0 +1,29 @@
+/* 添加表单 */
+.formAdd h3{text-align: center;line-height: 40px;color:#333;}
+.formAdd .input-group{margin-top: 10px;}
+.formAdd .btn{display: block;margin:20px auto;}
+
+/* 数据列表表格 */
+.datalist thead tr{background: #2B333E;color:#fff;text-align: center;}
+.datalist tbody tr{text-align: center;background: #fff;color:#2B333E;}
+.datalist img{width: 50px;height: 50px;}
+
+
+/* 发布文章 */
+.articleAdd h3{text-align: center;margin-bottom: 10px;}
+.articleAdd .input-group{margin-top: 15px;}
+.articleAdd #content{margin-top: 20px;}
+.articleAdd .mybtn .btn{display: block;margin: 20px auto;}
+
+/* 错误信息模板 */
+.myerror p{color:red;font-size: 20px;}
+.myerror p span{color:green;font-weight:bold;}
+
+/*修改文章封面*/
+.aritcleEditImage img{width: 150px;height: 150px;}
+
+/*登录页面*/
+.login h3{text-align: center;margin-bottom: 100px; line-height: 100px;}
+.login .input-group{margin-top: 15px;}
+.login #content{margin-top: 20px;}
+.login .btn{display: block;margin: 20px auto;}

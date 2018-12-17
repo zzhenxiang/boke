@@ -1,0 +1,34 @@
+	<footer>
+		<!-- 底部 -->
+    <div class="container myfooter">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">友情链接</h3>
+        </div>
+        <div class="panel-body">
+     
+           <% pydata.forEach(function(val){ %>
+
+            感谢<a href="<%=val.goin%>"><%=val.name%></a>
+
+          <% }) %>
+
+        </div>
+      </div>    
+    </div>
+		<div class="container-fluid">
+			<p class="copyright">
+				&copy; 2018 - 欢迎访问<a href="/">有用文章网</a>
+				有用文章网-专业收集各类经典文章
+
+			</p>
+		</div>
+	</footer>
+</div>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

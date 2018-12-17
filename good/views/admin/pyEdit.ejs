@@ -1,0 +1,33 @@
+<% include header %>
+<ol class="breadcrumb">
+	<li class="text-info">友情链接管理</li>
+	<li class="active">编辑友情链接</li>
+</ol>
+
+<div class="row formAdd">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+        <h3>编辑友情链接信息</h3>
+        <form action="/admin/pyUpdate" method="post">
+            <!-- 隐藏域 来传递一个 id -->
+            <input type="hidden" name="_id" value="<%=data._id%>">
+            <div class="input-group">
+              <span class="input-group-addon">友情链接名称</span>
+              <input type="text" class="form-control" name="name"  value="<%=data.name%>">
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">友情链接网址</span>
+              <input type="text" class="form-control" name="goin" value="<%=data.goin%>">
+            </div>   
+ 
+            <div class="center-block">
+              <input type="submit" class="btn btn-success" value="确认修改">
+            </div>
+
+        </form>		
+	</div>
+	<div class="col-md-3"></div>
+</div>
+
+<% include footer %>

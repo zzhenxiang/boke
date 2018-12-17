@@ -1,0 +1,113 @@
+<% include header %>
+<ol class="breadcrumb">
+	<li class="text-info">文章管理</li>
+	<li class="active">编辑文章</li>
+</ol>
+
+<!-- 修改图片 -->
+<form action="/admin/articleImgUrlUpdate" class="aritcleEditImage" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="_id" value="<%=data._id%>">
+  <div class="row">
+    <div class="col-md-1">封面：</div>
+    <div class="col-md-2">
+      <img src="/<%=data.imgurl%>" alt="">
+    </div>
+    <div class="col-md-4">
+
+      <div class="input-group">
+        <span class="input-group-addon">上传新封面</span>
+        <input type="file" class="form-control" name="imgurl">
+      </div>      
+      <input type="submit" value="保存" style="margin-top:20px">
+    </div>
+  </div>
+</form>
+
+
+<!-- 修改文本 -->
+<form action="/admin/articleTextUpdate" method="post">
+  <input type="hidden" name="_id" value="<%=data._id%>">
+  <div class="row articleAdd">
+    <!-- <h3>发布文章</h3> -->
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon">标题</span>
+        <input type="text" class="form-control" name="title" value="<%=data.title%>">
+      </div>      
+    </div>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon">栏目</span>
+        <select class="form-control" name="itemId">
+          <% items.forEach(function(val){ %> 
+            <option value="<%=val._id%>" <%=val._id==data.itemId?'selected':''%>>
+              <%=val.name%>
+            </option>
+          <% }) %> 
+        </select>
+      </div>      
+    </div>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon">作者</span>
+        <input type="text" class="form-control" name="author" value="<%=data.author%>">
+      </div>      
+    </div>
+
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon">关键字</span>
+        <input type="text" class="form-control" name="keywords"  value="<%=data.keywords%>">
+      </div>      
+    </div>
+
+    <div class="col-md-12">
+      <div class="input-group">
+        <span class="input-group-addon">描述</span>
+        <input type="text" class="form-control" name="description" value="<%=data.description%>">
+      </div>      
+    </div>
+
+    <div class="col-md-12">
+      <!-- 加载编辑器的容器 -->
+      <script id="content" name="content" type="text/plain">
+        <%-data.content%>
+      </script>
+    </div>  
+
+    <div class="col-md-6 mybtn">
+      <input type="reset" class="btn btn-info" value="重新写内容">
+    </div>
+
+    <div class="col-md-6 mybtn">
+      <input type="submit" class="btn btn-success" value="确定修改文章内容">
+    </div>
+  </div>
+</form>
+
+<!-- 配置文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('content');
+</script>
+<% include footer %>
+
+
+<!-- 
+
+
+  title     String    文章标题
+  author    String    作者
+  itemId    ObjectId    栏目Id
+  content   String      文章内容
+  keywords  String    关键字
+  description String      文章的描述
+  imgurl    String      文章的封面
+
+
+ -->

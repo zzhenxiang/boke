@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>好用文章</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/index.css">
+
+  </head>
+  <body>
+  	
+    <div class="container">
+    <!-- 导航 -->
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">好用</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							 <a href="#">Link</a>
+						</li>
+						<li>
+							 <a href="#">联系我</a>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">栏目<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								 <% datas.forEach(function(val){ %>
+					              <li><a href="/articleList"><%=val.itemId.name%></a></li>
+					            <% }) %>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div> <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+
+
+
+					<ul class="nav navbar-nav navbar-right">
+					 	<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="/assets/img/user.png" class="img-circle" alt="Avatar"> 
+								<span><%-user.name%></span> 
+								<i class="icon-submenu lnr lnr-chevron-down"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/userlogOut">
+										<i class="lnr lnr-exit"></i> 
+										<span>退出登录</span>
+									</a>
+								</li>
+							</ul>
+						</li>	
+
+						<li>
+							<a class="update-pro" href="/" target="_blank">
+								<i class="fa fa-rocket"></i>
+								<span>网站首页</span>
+							</a>
+						</li>
+					</ul>
+					
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+	<!-- 导航end -->
+	<div style="height: 60px;"></div>
+<div class="container">
+	
+
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<% datas.forEach(function(val,idx){ %>
+			<div class="row clearfix">
+				<div class="col-md-8 dl-horizontal">
+				<blockquote>
+
+					<p>
+						<a href="/content/<%=val._id%>"><%=val.title%></a>
+					</p> <small>Someone famous <cite>Source Title</cite></small>
+				</blockquote>
+					<dl>
+						<dt>
+							文章标题
+						</dt>
+						<dd>
+							<%=val.title%>
+						</dd>
+						<dt>
+							文章栏目
+						</dt>
+						<dd>
+ 							<%=val.itemId.name%>
+						</dd>
+						
+						<dt>
+							发布时间
+						</dt>
+						<dd>
+							<%= val.ctime.toLocaleString()%>
+						</dd>
+						<dt>
+							发布者
+						</dt>
+						<dd>
+							<%=val.author%>
+						</dd>
+					</dl>
+				</div>
+				<div class="col-md-4 column listimg">
+					<img alt="140x140" src="<%- val.imgurl%>" />
+				</div>
+			</div>
+			<% }) %>	 
+
+		</div>
+	</div>
+	<!-- 分页 -->
+	<nav aria-label="Page navigation">
+	  <ul class="pagination">
+	    <li><a href="/articleList">首页</a></li>
+	    <li><a href="/articleList?page=<%=page-1%>">上一页</a></li>
+		<% for(var i=1;i<=maxPage;i++){ %>
+		    <li><a href="/articleList?page=<%=i%>"><%=i%></a></li>
+		<% } %>
+	    <li><a href="/articleList?page=<%=-(-page-1)%>">下一页</a></li>
+	    <li><a href="/articleList?page=<%=maxPage%>">尾页</a></li>
+	  </ul>
+	</nav>
+	<!-- 分页 end -->
+</div>
+<% include foot %>

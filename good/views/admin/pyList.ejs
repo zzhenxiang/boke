@@ -1,0 +1,38 @@
+<% include header %>
+<ol class="breadcrumb">
+	<li class="text-info">友情链接管理</li>
+	<li class="active">友情链接列表</li>
+</ol>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-hover datalist">
+			<caption>友情链接列表</caption>
+			<thead>
+				<tr>
+					
+					<td>友情链接名称</td>
+					<td>友情链接网址</td>
+					<td>创建时间</td>
+					<td>操作</td>
+				</tr>				
+			</thead>
+				
+			<% pys.forEach(function(val){ %>
+				<tr>
+					
+					<td><%=val.name%></td>
+					<td><%=val.goin%></td>
+					<td><%= val.ctime.toLocaleString()%> </td>
+					<td>
+						<a href="/admin/pyEdit/<%=val._id%>">编辑</a>
+						|
+						<a href="/admin/pyRemove/<%=val._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+					</td>
+				</tr>
+			<% }) %>	
+
+		</table>
+	</div>
+</div>
+<% include footer %>

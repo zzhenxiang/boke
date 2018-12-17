@@ -1,0 +1,38 @@
+<% include header %>
+<ol class="breadcrumb">
+	<li class="text-info">栏目管理</li>
+	<li class="active">栏目列表</li>
+</ol>
+
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-hover datalist">
+			<caption>栏目列表</caption>
+			<thead>
+				<tr>
+					<td>排序</td>
+					<td>栏目名称</td>
+					<td>栏目简介</td>
+					<td>创建时间</td>
+					<td>操作</td>
+				</tr>				
+			</thead>
+
+			<% items.forEach(function(val){ %>
+				<tr>
+					<td><%=val.order%></td>
+					<td><%=val.name%></td>
+					<td><%=val.info%></td>
+					<td><%= val.ctime.toLocaleString()%> </td>
+					<td>
+						<a href="/admin/itemEdit/<%=val._id%>">编辑</a>
+						|
+						<a href="/admin/itemRemove/<%=val._id%>" onclick="return confirm('您确定要删除吗？')">删除</a>
+					</td>
+				</tr>
+			<% }) %>	
+
+		</table>
+	</div>
+</div>
+<% include footer %>

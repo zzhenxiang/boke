@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>好台词-管理员-登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+	
+	<div class="container login">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+		        <h3>管理员-登录</h3>
+		        <form action="/admin/doLogin" method="post">
+		            <div class="input-group">
+		              <span class="input-group-addon">账号：</span>
+		              <input type="text" class="form-control" name="name">
+		            </div>
+
+		            <div class="input-group">
+		              <span class="input-group-addon">密码：</span>
+		              <input type="password" class="form-control" name="password">
+		            </div>
+
+		            <div class="input-group">
+		              <span class="input-group-addon">验证码</span>
+		              <input type="text" class="form-control" name="code" style="height: 44px;">
+		              <div class="input-group-addon">
+		                <a href=""><img src="/admin/code" alt=""></a>
+		              </div>
+		            </div>
+
+
+		            <div class="center-block">
+		              <input type="submit" class="btn btn-success" value="登录">
+		            </div>
+		        </form>					
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+
+
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>	
+</body>
+</html>

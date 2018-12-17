@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+	<title>登录表单</title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Style --> <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+	<h1>登录表单</h1>
+
+	<div class="container w3layouts agileits">
+
+		<div class="login w3layouts agileits">
+			<h2>登 录</h2>
+			<form action="/doUserLogin" method="post">
+				<input type="text" Name="name" placeholder="用户名" required="">
+				<input type="password" Name="password" placeholder="密码" required="">
+			<ul class="tick w3layouts agileits">
+				<li>
+					<input type="checkbox" id="brand1" value="">
+					<label for="brand1"><span></span>记住我</label>
+				</li>
+			</ul>
+			<!-- 验证码 -->
+			<div class="input-group">
+              <span class="input-group-addon">验证码：</span>
+              <input type="text" class="form-control" name="code" style="height: 44px;">
+              <div class="input-group-addon">
+                <a href=""><img src="/admin/code" alt=""></a>
+              </div>
+            </div>
+			<!-- 验证码end -->
+			<div class="send-button w3layouts agileits">
+				
+					<input type="submit" value="登 录">
+				
+			</div>
+			</form>
+			<a href="#">记住密码?</a>
+			
+			<div class="social-icons w3layouts agileits">
+				<p>- 其他方式登录 -</p>
+				<ul>
+					<li class="qq"><a href="#">
+					<span class="icons w3layouts agileits"></span>
+					<span class="text w3layouts agileits">QQ</span></a></li>
+					<li class="weixin w3ls"><a href="#">
+					<span class="icons w3layouts"></span>
+					<span class="text w3layouts agileits">微信</span></a></li>
+					<li class="weibo aits"><a href="#">
+					<span class="icons agileits"></span>
+					<span class="text w3layouts agileits">微博</span></a></li>
+					<div class="clear"> </div>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div><div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+		<div class="register w3layouts agileits">
+			<h2>注 册</h2>
+			<form action="/userInsert" method="post">
+				<input type="text" Name="name" placeholder="用户名" required="">
+				<input type="password" Name="password" placeholder="密码" required="">
+				<input type="text" Name="repassword" placeholder="重复密码" required="">
+				<input type="text" Name="tel" placeholder="手机号码" required="">
+				<!-- 验证码 -->
+			<div class="input-group">
+              <div class="input-group-addon">
+                <a href=""><img src="/admin/code" alt=""></a>
+              </div>
+              <span class="input-group-addon">验证码：</span>
+              <input type="text" class="form-control" name="code" style="height: 44px;">
+            </div>
+			<!-- 验证码end -->
+			<div class="send-button w3layouts agileits">
+					<input type="submit" value="免费注册">
+			</div>
+			
+			</form>
+			<div class="clear"></div>
+		</div>
+
+		<div class="clear"></div>
+
+	</div>
+
+	<div class="footer w3layouts agileits">
+		<p>&copy; 2018 - 欢迎访问 <a href="/">有用文章网</a>
+				有用文章网-专业收集各类经典文章</p>
+	</div>
+		
+
+</body>
+<!-- //Body -->
+
+</html>
